@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
            if(validateInput(weight,height)){
                val bmi=weight.toFloat()/((height.toFloat()/100)*(height.toFloat()/100))
                //format to 2 decimal places
-               val formatedBmi=String.format("%.2f",bmi.toFloat())
+
                displayResult(bmi)
            }
         }
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         val resultIndex=findViewById<TextView>(R.id.tvIndex)
         val resultDescription=findViewById<TextView>(R.id.tvResult)
         val info=findViewById<TextView>(R.id.tvInfo)
-        resultIndex.text=bmi.toString()
+        resultIndex.text=bmi.toString().format("%.2f",bmi.toFloat())
         var color=0
         var resultText=""
         info.text= "( Normal Range is 18.5 - 24.9 )"
